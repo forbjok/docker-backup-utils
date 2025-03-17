@@ -14,8 +14,8 @@ BACKUP_FILENAME=$PREFIX$timestamp.tar.zst
 sudo docker run \
 	-it \
 	--rm \
-	-v "$VOLUME_NAME:/mnt/data:ro" \
-	-v "$BACKUP_PATH:/mnt/backup:rw" \
+	-v "$VOLUME_NAME:/mnt/data:rw" \
+	-v "$BACKUP_PATH:/mnt/backup:ro" \
 	-e "BACKUP_FILENAME=$BACKUP_FILENAME" \
 	dbu-volume \
-	/backup.sh ${@:4}
+	${@:4}

@@ -7,7 +7,7 @@ PGDB=$4
 PGUSER=$5
 PGPASSWORD=$6
 
-BACKUP_ROOT=/mnt/storage/backup
+BACKUP_ROOT=${DBU_BACKUP_ROOT:-"$HOME/backup"}
 
 # Generate timestamp
 printf -v timestamp '%(%Y-%m-%d_%H-%M-%S)T' -1
